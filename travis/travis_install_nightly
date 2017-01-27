@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -e
 
 if [ "${LINT_CHECK}" != "0" ]; then
     pip install -q flake8 Click pylint-mccabe
