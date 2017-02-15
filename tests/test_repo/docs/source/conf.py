@@ -37,8 +37,7 @@ else:
 repos = []
 for repo in os.listdir(repos_home):
     if os.path.isdir(os.path.join(repos_home, repo)) and \
-            not repo.startswith('.') and \
-            'broken' not in repo:
+            not repo.startswith('.') and 'broken' not in repo:
         repos += repo
 
 addons_paths = []
@@ -48,6 +47,7 @@ def add_path(*paths):
     addons_paths.append(
         os.path.join(*paths)
     )
+
 
 add_path(odoo_root, 'openerp', 'addons')
 add_path(odoo_root, 'addons')
@@ -70,7 +70,7 @@ for directory in dirs:
         addons += directory
 print('dirs=%s' % dirs)
 
-## sphinxodoo.ext.autodoc variables
+# sphinxodoo.ext.autodoc variables
 sphinxodoo_root_path = odoo_root
 sphinxodoo_addons = addons
 sphinxodoo_addons_path = ['.',
@@ -78,7 +78,6 @@ sphinxodoo_addons_path = ['.',
                           sphinxodoo_root_path + '/openerp/addons']
 sys.path.append(build_path)
 sphinxodoo_addons = []
-
 
 # -- General configuration ------------------------------------------------
 
@@ -172,7 +171,6 @@ pygments_style = 'sphinx'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
 
-
 # -- Options for HTML output ----------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -199,7 +197,8 @@ html_theme = 'alabaster'
 # html_logo = None
 
 # The name of an image file (relative to this directory) to use as a favicon of
-# the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
+# the docs.  This file should be a Windows icon file (.ico) being
+# 16x16 or 32x32
 # pixels large.
 # html_favicon = None
 
